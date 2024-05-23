@@ -16,7 +16,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className} bg-gray-100`}>
+        <div className="flex justify-center">
+          {" "}
+          {/* Center content horizontally */}
+          <div className="w-full h-screen max-w-sm border flex flex-col">
+            {" "}
+            {/* Mobile layout */}
+            {children}
+          </div>
+        </div>
+      </body>
     </html>
   );
 }
