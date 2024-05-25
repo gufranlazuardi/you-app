@@ -1,7 +1,9 @@
+import DefaultProfile from "@/components/default-profile";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, Ellipsis, PencilLine } from "lucide-react";
 import Link from "next/link";
 import React from "react";
+import Image from "next/image";
 
 const Profile = () => {
   return (
@@ -10,7 +12,7 @@ const Profile = () => {
       <div className="flex justify-between items-center px-[1rem]">
         <div className="flex">
           <ChevronLeft color="white" />
-          <p className="text-white font-bold">Back</p>
+          <p className="text-white font-bold text-[14px]">Back</p>
         </div>
         <p className="text-white font-semibold">@johndoe</p>
         <Button>
@@ -20,10 +22,25 @@ const Profile = () => {
 
       <main className="flex flex-col gap-4 items-center">
         {/* box */}
-        <div className="flex w-[359px] h-[190px] bg-[#162329] mt-[1rem] rounded-md relative">
-          <p className="text-white font-bold absolute bottom-0 mb-4 ml-2">
+        <div
+          className="flex w-[359px] h-[190px] bg-[#162329] mt-[1rem] rounded-md relative bg-cover bg-center"
+          style={{ backgroundImage: "url('/profile-picture.png')" }}
+        >
+          <p className="text-white font-bold absolute bottom-[60px] mb-4 ml-2">
             @Johndoe,
           </p>
+          <p className="text-[13px] text-white absolute bottom-[55px] ml-2">
+            Male
+          </p>
+          <div className="flex ml-2 gap-2 items-center h-[36px] absolute bottom-[20px] w-auto bg-[#1D221E] rounded-[100px] px-4 py-1">
+            <Image
+              src="/Horoscope.svg"
+              width={15}
+              height={15}
+              alt="Horoscope"
+            />
+            <p className="text-white">Virgo</p>
+          </div>
           <PencilLine
             size={16}
             color="white"
@@ -54,11 +71,13 @@ const Profile = () => {
             <p className="text-white text-[14px] font-bold">
               Interest{" "}
             </p>
-            <PencilLine
-              size={16}
-              color="white"
-              className=" right-0 mt-2 me-2"
-            />
+            <Link href="/profile/interest">
+              <PencilLine
+                size={16}
+                color="white"
+                className="right-0 mt-2 me-2"
+              />
+            </Link>
           </div>
           <p className="text-white text-[14px] opacity-[52%]">
             Add in your interest to help others know you better
