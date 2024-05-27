@@ -21,8 +21,6 @@ export default function RootLayout({
           {" "}
           {/* Center content horizontally */}
           <div className="w-full h-screen max-w-sm border flex flex-col">
-            {" "}
-            {/* Mobile layout */}
             {children}
           </div>
         </div>
